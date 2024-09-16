@@ -149,7 +149,7 @@ public class Policy // File name
    */
    public double getBMI()
    {
-      double BMI = (pHolderWeight * 703 ) / (pHolderHeight * pHolderHeight);
+      double BMI = (pHolderWeight * 703) / (pHolderHeight * pHolderHeight);
       return BMI;
    }
    
@@ -160,10 +160,26 @@ public class Policy // File name
    public double getFee(double BMI)
    {
       if(pHolderAge > 50){
-         return 675;
+         if(smokeStatus.equalsIgnoreCase("smoker") && BMI > 35){
+            return 600 + 75 + 100 + ((BMI-35) * 20);
+         }
+         else if(smokeStatus.equalsIgnoreCase("smoker")){
+            return 600 + 75 + 100;
+         }
+         else if(BMI > 35){
+            return 600 + 75 + ((BMI-35) * 20);
+         }
+         else{
+            return 600 + 75;
+         }
       }
       else if(smokeStatus.equalsIgnoreCase("smoker")){
-         return 700;
+         if(smokeStatus.equalsIgnoreCase("smoker") && BMI > 35){
+            return 600 + 100 + ((BMI-35) * 20);
+         }
+         else{
+            return 600 + 100;
+         }
       }
       else if(BMI > 35){
          return 600 + ((BMI-35) * 20);
@@ -172,5 +188,4 @@ public class Policy // File name
          return 600;
       }
    }
-
 }
