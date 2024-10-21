@@ -82,7 +82,7 @@ public class Policy // File name
    
    /**
       Accessor (getter) method
-      @return The provider name.
+      @return The provider's name.
    */
    public String getProviderName()
    {
