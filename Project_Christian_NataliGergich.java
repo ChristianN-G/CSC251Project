@@ -69,10 +69,15 @@ public class Project_Christian_NataliGergich
          System.out.printf("Policy Price: $%.2f\n", policies.get(i).getFee(policies.get(i).getBMI()));
          System.out.println();
          
-         
+         if(policies.get(i).getSmokeStatus().equals("smoker")){
+            totalSmokers += 1;
+         }
+         else{
+            totalNonSmokers += 1;
+         }
       }
       
-      System.out.printf("The number of policies with a smoker is: %d\n", totalSmokers);
+      System.out.printf("\nThe number of policies with a smoker is: %d\n", totalSmokers);
       System.out.printf("The number of policies with a non-smoker is: %d", totalNonSmokers);
    }
 }      
