@@ -105,7 +105,7 @@ public class PolicyHolder // File name
    
    /**
       mutator (setter) method
-      @param policyNum The policy number.
+      @param firstName The policy holder's first name.
    */
    public void setFirstName(String firstName)
    {
@@ -114,7 +114,7 @@ public class PolicyHolder // File name
    
    /**
       mutator (setter) method
-      @param policyNum The policy number.
+      @param lastName The policy holder's last name.
    */
    public void setLastName(String lastName)
    {
@@ -123,7 +123,7 @@ public class PolicyHolder // File name
    
    /**
       mutator (setter) method
-      @param policyNum The policy number.
+      @param age The policy holder's age.
    */
    public void setAge(int age)
    {
@@ -132,7 +132,7 @@ public class PolicyHolder // File name
    
    /**
       mutator (setter) method
-      @param policyNum The policy number.
+      @param smokeStatus The policy holder's smoking status.
    */
    public void setSmokeStatus(String smokeStatus)
    {
@@ -141,7 +141,7 @@ public class PolicyHolder // File name
    
    /**
       mutator (setter) method
-      @param policyNum The policy number.
+      @param height The policy holder's height.
    */
    public void setHeight(double height)
    {
@@ -150,7 +150,7 @@ public class PolicyHolder // File name
    
    /**
       mutator (setter) method
-      @param policyNum The policy number.
+      @param weight The policy holder's weight.
    */
    public void setWeight(double weight)
    {
