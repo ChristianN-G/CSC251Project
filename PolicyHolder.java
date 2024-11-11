@@ -156,5 +156,14 @@ public class PolicyHolder // File name
    {
       this.weight = weight;
    }
+   
+   /**
+      toString method to display the policy holder's details
+   */   
+   public String toString()
+   {
+      return String.format("Policyholder's First Name: %s\nPolicyholder's Last Name: %s\nPolicyholder's Age: %d\n" +
+                           "Policyholder's Smoking Status: %s\nPolicyholder's Height: %.1f inches\nPolicyholder's Weight: %.1f pounds\nPolicyholder's BMI: %.2f\n", firstName, lastName, age, smokeStatus, height, weight, getBMI());   
+   }
       
 }
