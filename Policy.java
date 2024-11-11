@@ -59,7 +59,7 @@ public class Policy // File name
       Accessor (getter) method
       @return The policy holder's fee.
    */
-   public double getFee(double BMI)
+   public double getFee()
    {
       if(policyHolder.getAge() > 50){
          if(policyHolder.getSmokeStatus().equalsIgnoreCase("smoker") && policyHolder.getBMI() > 35){
@@ -116,6 +116,14 @@ public class Policy // File name
    public void setPolicyHolder(PolicyHolder policyHolder)
    {
       this.policyHolder = policyHolder;
+   }
+   
+   /**
+      toString method to display the policy details
+   */
+   public String toString()
+   {
+      return String.format("\nPolicy Number: %d\nProvider Name: %s\n%s\nPolicy Price: $%.2f\n", policyNum, providerName, policyHolder.toString(), getFee());
    }
    
 }
