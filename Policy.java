@@ -5,6 +5,8 @@ public class Policy // File name
    private String providerName;
    private PolicyHolder policyHolder;
    
+   private static int policyCount = 0;
+   
    /**
       no-arg constructor that initializes the policy number, provider name, and the policy holder's information of an insurance policy to default values
    */
@@ -13,6 +15,7 @@ public class Policy // File name
       policyNum = 0;
       providerName = "None";
       policyHolder = null;
+      policyCount++;
    }
    
    /**
@@ -26,6 +29,7 @@ public class Policy // File name
       this.policyNum = policyNum;
       this.providerName = providerName;
       this.policyHolder = policyHolder;
+      policyCount++;
    }
    
    /**
@@ -89,6 +93,15 @@ public class Policy // File name
       else{
          return 600;
       }
+   }
+   
+   /**
+      Accessor (getter) method
+      @return The amount of policies counted
+   */
+   public static int getPolicyCount()
+   {
+      return policyCount;
    }
    
    /**
