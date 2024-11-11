@@ -5,6 +5,7 @@ public class Policy // File name
    private String providerName;
    private PolicyHolder policyHolder;
    
+   //holds how many polocy objects have been created
    private static int policyCount = 0;
    
    /**
@@ -23,12 +24,13 @@ public class Policy // File name
       @param policyNum The policy number.
       @param providerName The provider name.
       @param policyHolder The policy holder's information.
+      w/ added security as copy constructor
    */
    public Policy(int policyNum, String providerName, PolicyHolder policyHolder)
    {
       this.policyNum = policyNum;
       this.providerName = providerName;
-      this.policyHolder = policyHolder;
+      this.policyHolder = new PolicyHolder(policyHolder.getFirstName(),policyHolder.getLastName(),policyHolder.getAge(),policyHolder.getSmokeStatus(),policyHolder.getHeight(),policyHolder.getWeight());
       policyCount++;
    }
    
@@ -53,10 +55,11 @@ public class Policy // File name
    /**
       Accessor (getter) method
       @return The policy holder's information.
+      w/ added security returning a copy
    */
    public PolicyHolder getPolicyHolder()
    {
-      return policyHolder;
+      return new PolicyHolder(policyHolder.getFirstName(),policyHolder.getLastName(),policyHolder.getAge(),policyHolder.getSmokeStatus(),policyHolder.getHeight(),policyHolder.getWeight());
    } 
    
    /**
@@ -124,11 +127,12 @@ public class Policy // File name
    
    /**
       mutator (setter) method
-      @param policyHolder The policy holder's information..
+      @param policyHolder The policy holder's information.
+      w/ added security as making a deep copy of the argument
    */
    public void setPolicyHolder(PolicyHolder policyHolder)
    {
-      this.policyHolder = policyHolder;
+      this.policyHolder = new PolicyHolder(policyHolder.getFirstName(),policyHolder.getLastName(),policyHolder.getAge(),policyHolder.getSmokeStatus(),policyHolder.getHeight(),policyHolder.getWeight());
    }
    
    /**
